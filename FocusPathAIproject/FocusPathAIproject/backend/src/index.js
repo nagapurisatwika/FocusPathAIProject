@@ -88,9 +88,9 @@ if (require("fs").existsSync(FRONTEND_DIST)) {
 
 app.use(errorHandler);
 
-/* ✅ FIXED PORT ISSUE HERE */
+/* ✅ FIXED PORT ISSUE (DEPLOYMENT SAFE) */
 const PORT = process.env.PORT || env.BACKEND_PORT || 4000;
 
-httpServer.listen(PORT, () => {
+httpServer.listen(PORT, "0.0.0.0", () => {
   console.log(`FocusPath AI backend listening on :${PORT}`);
 });
